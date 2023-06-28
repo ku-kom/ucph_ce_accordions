@@ -17,13 +17,6 @@
             "lighten",
             "darken"
           ],
-          "property-disallowed-list": [
-            "border-radius",
-            "border-top-left-radius",
-            "border-top-right-radius",
-            "border-bottom-right-radius",
-            "border-bottom-left-radius"
-          ],
           "scss/dollar-variable-default": [
             true,
             {
