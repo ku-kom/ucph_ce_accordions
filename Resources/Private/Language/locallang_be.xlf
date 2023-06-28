@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2022-06-15UTC07:12:051">
+        <header>
+            <authorName>Nanna Ellegaard</authorName>
+            <authorEmail>nel@adm.ku.dk</authorEmail>
+        </header>
+        <body>
+        <trans-unit id="label">
+            <source>UCPH TYPO3 content element "Accordions"</source>
+        </trans-unit>
+        <trans-unit id="description">
+            <source>Create accordions by adding content elements</source>
+        </trans-unit>
+        <trans-unit id="wizard_interactive">
+            <source>Interactive</source>
+        </trans-unit>
+        <trans-unit id="add_content">
+            <source>Add accordion content</source>
+        </trans-unit>
+        <trans-unit id="options">
+            <source>Accordion options</source>
+        </trans-unit>
+        <trans-unit id="default_element">
+            <source>Select accordion to be open by default</source>
+        </trans-unit>
+        <trans-unit id="none">
+            <source>-- None --</source>
+        </trans-unit>
+        <trans-unit id="advanced">
+            <source>General settings</source>
+        </trans-unit>
+        <trans-unit id="style">
+            <source>Accordion style</source>
+        </trans-unit>
+        <trans-unit id="style_accordion">
+            <source>Normal accordion</source>
+        </trans-unit>
+        <trans-unit id="style_semi_collapse_accordion">
+            <source>Semi collapse accordion</source>
+        </trans-unit>
+        <trans-unit id="one_or_multiple_open">
+            <source>Allow either one or more accordions open at a time</source>
+        </trans-unit>
+        <trans-unit id="multiple_open">
+            <source>Allow multiple accordions to be open at a time</source>
+        </trans-unit>
+        <trans-unit id="one_open">
+            <source>Allow only one accordion to be open at a time</source>
+        </trans-unit>
+        <trans-unit id="accordion_item_height">
+            <source>Semi collapse height in px</source>
+        </trans-unit>
+        <trans-unit id="accordion_item_height_desc">
+            <source>Only change if strictly necessary</source>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>

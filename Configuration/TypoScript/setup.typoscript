@@ -1,0 +1,58 @@
+tt_content.ucph_ce_accordions >
+# CType Accordions
+
+tt_content.ucph_ce_accordions =< lib.contentElement
+tt_content.ucph_ce_accordions {
+  templateName = Accordion
+
+  templateRootPaths {
+        10 = EXT:ucph_ce_accordions/Resources/Private/Templates/
+        20 = {$ucph_ce_accordions.templates.templateRootPath}
+    }
+	partialRootPaths {
+		    10 = EXT:ucph_ce_accordions/Resources/Private/Partials/
+        20 = {$ucph_ce_accordions.templates.partialRootPath}
+	}
+
+    layoutRootPaths {
+        10 = EXT:ucph_ce_accordions/Resources/Private/Layouts/
+        20 = {$ucph_ce_accordions.templates.layoutRootPath}
+    }
+
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
+    203 = B13\Container\DataProcessing\ContainerProcessor
+    203 {
+      colPos = 203
+      as = accordions
+
+      dataProcessing.20 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      dataProcessing.20 {
+        references.table = tt_content
+        references.fieldName = image
+        as = images
+      }
+    }
+  }
+}
+
+
+##########################
+#### OPTION TO ADD CSS ###
+##########################
+lib.ucph_ce_accordions.pagecss = TEXT
+lib.ucph_ce_accordions.pagecss {
+    if.isTrue = {$ucph_ce_accordions.assets.extraCss}
+    value = {$ucph_ce_accordions.assets.extraCss}
+    htmlSanitize = 1
+}
+
+##########################
+#### OPTION TO ADD JS ####
+##########################
+lib.ucph_ce_accordions.pagejs = TEXT
+lib.ucph_ce_accordions.pagejs {
+    if.isTrue = {$ucph_ce_accordions.assets.extraJs}
+    value = {$ucph_ce_accordions.assets.extraJs}
+    htmlSanitize = 1
+}

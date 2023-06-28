@@ -1,0 +1,17 @@
+mod.wizards.newContentElement.wizardItems {
+  // add the content element to the tab "Interactive"
+  interactive {
+    header = LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:wizard_interactive
+    elements {
+      ucph_cardgroup {
+        iconIdentifier = ucph-ce-accordions-icon
+        title = LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:label
+        description = LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:description
+        tt_content_defValues {
+          CType = ucph_ce_accordions
+        }
+      }
+    }
+    show := addToList(ucph_ce_accordions)
+  }
+}

@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:if condition="{accordions}">
+        <f:variable name="activeElement" value="{flexFormData.default_element}" />
+        <f:variable name="accordionStyle" value="{flexFormData.style}" />
+        <f:variable name="accordionOpenStyle" value="{flexFormData.open_style}" />
+        <f:if condition="{accordionStyle} == 'semi-collapse'">
+            <f:then>
+                <div class="accordion {accordionStyle}" id="accordion-{data.uid}">
+                    <f:for each="{accordions}" as="record" iteration="iteration">
+                        <f:render partial="SemiCollapseAccordion" arguments="{_all}" />
+                    </f:for>
+                </div>
+            </f:then>
+            <f:else>
+                <div class="accordion" id="accordion-{data.uid}">
+                    <f:for each="{accordions}" as="record" iteration="iteration">
+                        <f:render partial="NormalAccordion" arguments="{_all}" />
+                    </f:for>
+                </div>
+            </f:else>
+        </f:if>
+        <f:if condition="{lib.ucph_ce_accordions.pagecss !== ''}">
+            <f:asset.css identifier="semicollapseCSS" href="{f:cObject(typoscriptObjectPath: 'lib.ucph_ce_accordions.pagecss')}" />
+        </f:if>
+        <f:if condition="{lib.ucph_ce_accordions.pagejs !== ''}">
+            <f:asset.script identifier="semicollapseJs" src="{f:cObject(typoscriptObjectPath: 'lib.ucph_ce_accordions.pagejs')}" />
+        </f:if>
+    </f:if>
+
+
+</html>
