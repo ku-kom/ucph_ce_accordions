@@ -3,16 +3,15 @@
     "version": "1.0.0",
     "description": "Accordions",
     "scripts": {
-		"concat:css": "globcat \"Resources/Public/Css/Src/**/*.css\" --output \"Resources/Public/Css/Dist/ucph-ce-accordions.css\"",
-		"minify:css": "postcss \"Resources/Public/Css/Dist/ucph-ce-accordions.css\" --config Build/postcss.config.js \"Resources/Public/Css/Dist/*.css\" \"!Resources/Public/Css/Dist/*.min.css\" --output \"Resources/Public/Css/Dist/ucph-ce-accordions.min.css\"",
-		"concat:js": "globcat \"Resources/Public/JavaScript/Src/**/*.js\" --output \"Resources/Public/JavaScript/Dist/ucph-ce-accordions.js\"",
-		"lint:js": "eslint --cache --cache-location .cache/.eslintcache",
-		"minify:js": "terser \"Resources/Public/JavaScript/Dist/ucph-ce-accordions.js\" --output \"Resources/Public/JavaScript/Dist/ucph-ce-accordions.min.js\" --compress passes=2 --mangle-props --source-map",
-		"build:js": "npm-run-all lint:js && npm-run-all concat:js && npm-run-all minify:js",
-		"build:css": "npm-run-all concat:css && npm-run-all minify:css",
-		"watch:css": "onchange \"Resources/Public/Css/Src/*.css\" -- npm-run-all build:css",
-		"watch:js": "onchange \"Resources/Public/JavaScript/Src/*.js\" -- npm-run-all build:js",
-		"watch": "npm-run-all --parallel watch:*"
+		"css-compile": "sass --style compressed --source-map --embed-sources --no-error-css \"Resources/Public/Scss/import.scss\" \"Resources/Public/Css/Dist/ucph-ce-accordions.min.css\"",
+		"css-lint": "stylelint \"Resources/Public/Scss/\"",
+		"css-prefix": "postcss \"Resources/Public/Css/Dist/ucph-ce-accordions.min.css\" --config build/postcss.config.js --output \"Resources/Public/Css/Dist/ucph-ce-accordions.min.css\"",
+		"watch-css": "onchange \"Resources/Public/Scss/**/*.scss\" -- npm-run-all css-compile css-lint css-prefix",
+		"js-lint": "eslint --cache --cache-location .cache/.eslintcache --report-unused-disable-directives --ext .js, ",
+		"js-minify": "terser --compress passes=2 --mangle-props --format quote_style=1 --comments \"/^!/\" --output \"Resources/Public/JavaScript/Dist/ucph-ce-accordions.min.js\" \"Resources/Public/JavaScript/Src/ucph-ce-accordions.js\" --source-map",
+		"watch-js": "onchange \"Resources/Public/JavaScript/Src/**/*.js\" -- npm-run-all js-lint js-minify",
+		"watch": "npm-run-all --parallel watch-*",
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
     "keywords": [
         "TYPO3",
@@ -26,12 +25,12 @@
 		"autoprefixer": "^10.4.14",
 		"postcss": "^8.4.18",
 		"postcss-cli": "^10.0.0",
-		"cssnano": "^5.1.15",
 		"eslint": "^8.36.0",
-		"globcat": "^3.0.1",
+		"sass": "^1.63.6",
+		"stylelint": "^15.9.0",
+		"stylelint-config-twbs-bootstrap": "^10.0.0",
 		"npm-run-all": "^4.1.5",
 		"onchange": "^7.1.0",
-		"terser": "^5.16.6",
-		"uglify-js": "^3.17.4"
+		"terser": "^5.16.6"
 	}
 }

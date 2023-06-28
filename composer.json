@@ -5,7 +5,8 @@
     "homepage": "https://b13.com",
     "license": ["GPL-2.0-or-later"],
     "require": {
-        "b13/container": "*"
+        "b13/container": "*",
+        "ichhabrecht/content-defender": "*"
     },
     "autoload": {
         "psr-4": {

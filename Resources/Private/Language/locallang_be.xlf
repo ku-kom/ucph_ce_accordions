@@ -7,10 +7,10 @@
         </header>
         <body>
         <trans-unit id="label">
-            <source>UCPH TYPO3 content element "Accordions"</source>
+            <source>Accordion</source>
         </trans-unit>
         <trans-unit id="description">
-            <source>Create accordions by adding content elements</source>
+            <source>Insert several accordio nelements with headline and text. Choose between normal or semi collapsd accordion style.</source>
         </trans-unit>
         <trans-unit id="wizard_interactive">
             <source>Interactive</source>

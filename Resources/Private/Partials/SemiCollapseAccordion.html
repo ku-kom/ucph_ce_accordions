@@ -1,21 +1,21 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <div class="semi-collapse-item">
-    <div id="accordion-{data.uid}-{record.uid}" class="semi-collapse-accordion-collapse collapse{f:if(condition: '{activeElement} == {record.uid}', then: ' show')} {flexFormData.accordion_item_height}" aria-labelledby="accordion-heading-{data.uid}-{record.uid}" data-parent="#accordion-{data.uid}" {f:if(condition: '{accordionOpenStyle} == "single"' , then: ' data-bs-parent="#accordion-{data.uid}"' )}>
+    <div id="accordion-{data.uid}-{accordion.uid}" class="semi-collapse-accordion-collapse collapse{f:if(condition: '{activeElement} == {accordion.uid}', then: ' show')} {flexFormData.accordion_item_height}" aria-labelledby="accordion-heading-{data.uid}-{accordion.uid}" data-parent="#accordion-{data.uid}" {f:if(condition: '{accordionOpenStyle} == "single"' , then: ' data-bs-parent="#accordion-{data.uid}"' )}>
         <div class="semi-collapsible-body">
-            <h2 class="semi-collapsible-header" id="accordion-heading-{data.uid}-{record.uid}">{record.header}</h2>
+            <h2 class="semi-collapsible-header" id="accordion-heading-{data.uid}-{accordion.uid}">{accordion.header}</h2>
             <div class="semi-collapsible-media">
-                <f:if condition="{record.image}">
-                    <f:for each="{record.image}" as="file">
-                        <img src="{f:uri.image(image: file)}" alt="" class="img-fluid">
+                <f:if condition="{accordion.images}">
+                    <f:for each="{accordion.images}" as="image">
+                        <f:image src="{f:uri.image(image: image)}" alt="{image.alternative}" />
                     </f:for>
                 </f:if>
                 <div class="accordion-content-text">
-                    <f:format.html>{record.bodytext}</f:format.html>
+                    <f:format.html>{accordion.bodytext}</f:format.html>
                 </div>
             </div>
         </div>
     </div>
-    <button class="btn semi-collapsible-button{f:if(condition: '{activeElement} == {record.uid}', else:' collapsed')}" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-{data.uid}-{record.uid}" data-bs-parent="#accordion-{data.uid}" aria-expanded="{f:if(condition: '{activeElement} == {record.uid}', then: 'true', else: 'false')}" aria-controls="accordion-{data.uid}-{record.uid}"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang.xlf:semi_collapse_accordion_btn')}</span></button>
+    <button class="btn semi-collapsible-button{f:if(condition: '{activeElement} == {accordion.uid}', else:' collapsed')}" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-{data.uid}-{accordion.uid}" data-bs-parent="#accordion-{data.uid}" aria-expanded="{f:if(condition: '{activeElement} == {accordion.uid}', then: 'true', else: 'false')}" aria-controls="accordion-{data.uid}-{accordion.uid}"><span class="visually-hidden">{f:translate(key: 'LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang.xlf:semi_collapse_accordion_btn')}</span></button>
 </div>
 
 </html>

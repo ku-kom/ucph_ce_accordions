@@ -7,14 +7,14 @@
         <f:if condition="{accordionStyle} == 'semi-collapse'">
             <f:then>
                 <div class="accordion {accordionStyle}" id="accordion-{data.uid}">
-                    <f:for each="{accordions}" as="record" iteration="iteration">
+                    <f:for each="{accordions}" as="accordion">
                         <f:render partial="SemiCollapseAccordion" arguments="{_all}" />
                     </f:for>
                 </div>
             </f:then>
             <f:else>
                 <div class="accordion" id="accordion-{data.uid}">
-                    <f:for each="{accordions}" as="record" iteration="iteration">
+                    <f:for each="{accordions}" as="accordion" iteration="iteration">
                         <f:render partial="NormalAccordion" arguments="{_all}" />
                     </f:for>
                 </div>

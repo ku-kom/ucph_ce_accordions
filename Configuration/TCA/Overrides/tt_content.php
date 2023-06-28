@@ -26,7 +26,7 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
                 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:description', // description
                 [
                     [
-                        ['name' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_content', 'colPos' => 203, 'allowed' => ['CType' => 'text, textmedia, textpic, image']]
+                        ['name' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_content', 'colPos' => 203, 'allowed' => ['CType' => 'ucph_ce_text, ucph_ce_image']]
                     ]
                 ]
             )
@@ -37,6 +37,9 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
     // Assign Icon
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$contentType] = 'ucph-ce-accordions-icon';
 
+    // Rename wizard tab
+    $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['itemGroups']['container'] = 'LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:wizard_interactive';
+
     // Configure element type
     $GLOBALS['TCA']['tt_content']['types'][$contentType] = array_replace_recursive(
         $GLOBALS['TCA']['tt_content']['types'][$contentType],
@@ -45,6 +48,7 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
+                bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,
             --div--;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:options,
                 pi_flexform;LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:advanced,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
@@ -60,7 +64,15 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
                 rowDescription,
             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-        '
+            ',
+            'columnsOverrides' => [
+                'bodytext' => [
+                    'config' => [
+                        'enableRichtext' => true,
+                        'richtextConfiguration' => 'default',
+                    ],
+                ],
+            ],
         ]
     );
 

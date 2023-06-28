@@ -1,21 +1,21 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
 <div class="accordion-item">
-    <h2 class="accordion-header" id="accordion-heading-{data.uid}-{record.uid}">
-        <button class="accordion-button{f:if(condition: '{activeElement} == {record.uid}', else:' collapsed')}" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-{data.uid}-{record.uid}" aria-expanded="{f:if(condition: '{activeElement} == {record.uid}', then: 'true', else: 'false')}" aria-controls="accordion-{data.uid}-{record.uid}">{record.header}</button>
+    <h2 class="accordion-header" id="accordion-heading-{data.uid}-{accordion.uid}">
+        <button class="accordion-button{f:if(condition: '{activeElement} == {accordion.uid}', else:' collapsed')}" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-{data.uid}-{accordion.uid}" aria-expanded="{f:if(condition: '{activeElement} == {accordion.uid}', then: 'true', else: 'false')}" aria-controls="accordion-{data.uid}-{accordion.uid}">{accordion.header}</button>
     </h2>
-    <div id="accordion-{data.uid}-{record.uid}" class="accordion-collapse collapse{f:if(condition: '{activeElement} == {record.uid}', then: ' show')}" aria-labelledby="accordion-heading-{data.uid}-{record.uid}" {f:if(condition: '{accordionOpenStyle} == "single"' , then: ' data-bs-parent="#accordion-{data.uid}"' )}>
+    <div id="accordion-{data.uid}-{accordion.uid}" class="accordion-collapse collapse{f:if(condition: '{activeElement} == {accordion.uid}', then: ' show')}" aria-labelledby="accordion-heading-{data.uid}-{accordion.uid}" {f:if(condition: '{accordionOpenStyle} == "single"' , then: ' data-bs-parent="#accordion-{data.uid}"' )}>
         <div class="accordion-body">
-            <div class="accordion-content accordion-content-{record.mediaorient}">
-                <f:if condition="{record.image}">
+            <div class="accordion-content accordion-content-{accordion.mediaorient}">
+                <f:if condition="{accordion.images}">
                     <div class="accordion-content-item accordion-content-media">
-                        <f:for each="{record.image}" as="file">
-                            <img src="{f:uri.image(image: file)}" alt="" class="img-fluid">
+                        <f:for each="{accordion.images}" as="image">
+                            <f:image src="{f:uri.image(image: image)}" alt="{image.alternative}" />
                         </f:for>
                     </div>
                 </f:if>
                 <div class="accordion-content-item accordion-content-text">
-                    <f:format.html>{record.bodytext}</f:format.html>
+                    <f:format.html>{accordion.bodytext}</f:format.html>
                 </div>
             </div>
         </div>
