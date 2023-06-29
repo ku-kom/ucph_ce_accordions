@@ -18,29 +18,28 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
     }
 
     // UCPH TYPO3 content element "Accordions" container
-    \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
-        (
-            new \B13\Container\Tca\ContainerConfiguration(
-                $contentType, // CType
-                'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:label', // label
-                'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:description', // description
-                [
+    // Activate extension container if extension is activated
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('container')) {
+        \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)->configureContainer(
+            (
+                new \B13\Container\Tca\ContainerConfiguration(
+                    $contentType, // CType
+                    'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:label', // label
+                    'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:description', // description
                     [
-                        ['name' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_content', 'colPos' => 203, 'allowed' => ['CType' => 'ucph_ce_text, ucph_ce_image']]
+                        [
+                            ['name' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_content', 'colPos' => 203, 'allowed' => ['CType' => 'ucph_ce_text, ucph_ce_image']]
+                        ]
                     ]
-                ]
+                )
             )
-        )
-        ->setIcon('EXT:' . $extKey . '/Resources/Public/Icons/accordion.svg')
-        // Wizard tab name
-        ->setGroup('Interactive')
-    );
-
+            ->setIcon('EXT:' . $extKey . '/Resources/Public/Icons/accordion.svg')
+            // Wizard tab name
+            ->setGroup('Interactive')
+        );
+    }
     // Assign Icon
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$contentType] = 'ucph-ce-accordions-icon';
-
-    // Rename wizard tab
-    //$GLOBALS['TCA']['tt_content']['columns']['CType']['config']['itemGroups']['container'] = 'LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:wizard_interactive';
 
     // Configure element type
     $GLOBALS['TCA']['tt_content']['types'][$contentType] = array_replace_recursive(
