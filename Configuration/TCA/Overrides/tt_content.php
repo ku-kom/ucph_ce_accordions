@@ -32,13 +32,15 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
             )
         )
         ->setIcon('EXT:' . $extKey . '/Resources/Public/Icons/accordion.svg')
+        // Wizard tab name
+        ->setGroup('Interactive')
     );
 
     // Assign Icon
     $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$contentType] = 'ucph-ce-accordions-icon';
 
     // Rename wizard tab
-    $GLOBALS['TCA']['tt_content']['columns']['CType']['config']['itemGroups']['container'] = 'LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:wizard_interactive';
+    //$GLOBALS['TCA']['tt_content']['columns']['CType']['config']['itemGroups']['container'] = 'LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:wizard_interactive';
 
     // Configure element type
     $GLOBALS['TCA']['tt_content']['types'][$contentType] = array_replace_recursive(
