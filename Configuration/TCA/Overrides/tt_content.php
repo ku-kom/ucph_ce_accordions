@@ -17,6 +17,9 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
         $GLOBALS['TCA']['tt_content']['types'][$contentType] = [];
     }
 
+    // Allowed CTypes inside accordions
+    $allowedCTypes = 'ucph_ce_text, ucph_ce_image';
+
     // UCPH TYPO3 content element "Accordions" container
     // Activate extension container if extension is activated
     if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('container')) {
@@ -28,7 +31,7 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
                     'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:description', // description
                     [
                         [
-                            ['name' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_content', 'colPos' => 203, 'allowed' => ['CType' => 'ucph_ce_text, ucph_ce_image']]
+                            ['name' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_be.xlf:add_content', 'colPos' => 203, 'allowed' => ['CType' => $allowedCTypes]]
                         ]
                     ]
                 )
@@ -36,6 +39,8 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
             ->setIcon('EXT:' . $extKey . '/Resources/Public/Icons/accordion.svg')
             // Wizard tab name
             ->setGroup('Interactive')
+            // Backend template
+            ->setBackendTemplate('EXT:' . $extKey . '/Resources/Private/Templates/Backend.html')
         );
     }
     // Assign Icon
