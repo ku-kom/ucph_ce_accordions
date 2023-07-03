@@ -1,5 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-
+<f:layout name="Default" />
+<f:section name="Main">
     <f:if condition="{accordions}">
         <f:variable name="activeElement" value="{flexFormData.default_element}" />
         <f:variable name="accordionStyle" value="{flexFormData.style}" />
@@ -27,6 +28,6 @@
             <f:asset.script identifier="semicollapseJs" src="{f:cObject(typoscriptObjectPath: 'lib.ucph_ce_accordions.pagejs')}" />
         </f:if>
     </f:if>
-
+</f:section>
 
 </html>
