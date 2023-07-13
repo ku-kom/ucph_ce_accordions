@@ -11,6 +11,6 @@ ucph_ce_accordions {
         # cat=UCPH TYPO3 content element "Accordions"/Assets/; type=string; label=CSS assets: Path to stylesheet.
         extraCss = EXT:ucph_ce_accordions/Resources/Public/Css/Dist/ucph-ce-accordions.min.css
         # cat=UCPH TYPO3 content element "Accordions"/Assets/; type=string; label=JavaScript assets: Path to javaScript file.
-        extraJs = EXT:ucph_ce_accordions/Resources/Public/JavaScript/Dist/ucph-ce-accordions.min.js
+        extraJs = EXT:ucph_assets/Resources/Public/JavaScript/Dist/ext/ext_ucph_ce_accordions.min.js
     }
 }
