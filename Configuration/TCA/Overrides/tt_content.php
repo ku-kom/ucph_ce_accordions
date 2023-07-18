@@ -18,7 +18,7 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
     }
 
     // Allowed CTypes inside accordions
-    $allowedCTypes = 'ucph_ce_text, ucph_ce_image';
+    $allowedCTypes = 'ucph_ce_text, ucph_ce_image, ucph_ce_textimage';
 
     // UCPH TYPO3 content element "Accordions" container
     // Activate extension container if extension is activated
@@ -38,9 +38,7 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
             )
             ->setIcon('EXT:' . $extKey . '/Resources/Public/Icons/accordion.svg')
             // Wizard tab name
-            ->setGroup('Interactive')
-            // Backend template
-            ->setBackendTemplate('EXT:' . $extKey . '/Resources/Private/Templates/Backend.html')
+            ->setGroup('Interactive')         
         );
     }
     // Assign Icon
