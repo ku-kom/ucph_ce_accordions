@@ -6,7 +6,7 @@
             <div class="semi-collapsible-media">
                 <f:if condition="{accordion.images}">
                     <f:for each="{accordion.images}" as="image">
-                        <f:image src="{f:uri.image(image: image)}" alt="{image.alternative}" />
+                        <f:image image="{image}" alt="{image.alternative}" />
                     </f:for>
                 </f:if>
                 <div class="accordion-content-text">
