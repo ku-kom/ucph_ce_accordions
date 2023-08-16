@@ -10,7 +10,7 @@
                 <f:if condition="{accordion.images}">
                     <div class="accordion-content-item accordion-content-media">
                         <f:for each="{accordion.images}" as="image">
-                            <f:image src="{f:uri.image(image: image)}" alt="{image.alternative}" />
+                            <f:image image="{image}" alt="{image.alternative}" />
                         </f:for>
                     </div>
                 </f:if>
