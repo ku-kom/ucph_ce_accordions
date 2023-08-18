@@ -18,6 +18,9 @@
         <trans-unit id="add_content">
             <source>Add accordion content</source>
         </trans-unit>
+        <trans-unit id="internal_header">
+            <source>Internal title - not displayed in the frontend</source>
+        </trans-unit>
         <trans-unit id="options">
             <source>Accordion options</source>
         </trans-unit>
