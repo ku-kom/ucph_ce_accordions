@@ -1,6 +1,18 @@
 TCEFORM {
     tt_content {
-
-
+        header {
+           types {
+                ucph_ce_accordions {
+                    label = LLL:EXT:ucph_ce_accordions/Resources/Private/Language/locallang_be.xlf:internal_header
+                }
+            }
+        }
+        header_layout {
+           types {
+                ucph_ce_accordions {
+                    disabled = 1
+                }
+            }
+        }
     }
 }

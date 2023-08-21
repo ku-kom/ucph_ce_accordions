@@ -16,7 +16,7 @@
             <source>Interactive</source>
         </trans-unit>
         <trans-unit id="add_content">
-            <source>Add accordion content</source>
+            <source>Add accordion content below</source>
         </trans-unit>
         <trans-unit id="internal_header">
             <source>Internal title - not displayed in the frontend</source>
