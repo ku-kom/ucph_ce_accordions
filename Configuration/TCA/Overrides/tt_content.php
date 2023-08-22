@@ -38,7 +38,7 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
             )
             ->setIcon('EXT:' . $extKey . '/Resources/Public/Icons/accordion.svg')
             // Wizard tab name
-            ->setGroup('Interactive')         
+            ->setGroup('interactive')         
         );
     }
     // Assign Icon
