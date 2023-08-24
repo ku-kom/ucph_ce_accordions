@@ -1,12 +1,5 @@
 TCEFORM {
     tt_content {
-        header {
-           types {
-                ucph_content_accordions {
-                    label = LLL:EXT:ucph_content_accordions/Resources/Private/Language/locallang_be.xlf:internal_header
-                }
-            }
-        }
         header_layout {
            types {
                 ucph_content_accordions {

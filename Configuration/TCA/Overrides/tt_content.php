@@ -18,7 +18,7 @@ call_user_func(function ($extKey ='ucph_content_accordions', $contentType ='ucph
     }
 
     // Allowed CTypes inside accordions
-    $allowedCTypes = 'ucph_ce_text, ucph_ce_image, ucph_ce_textimage';
+    $allowedCTypes = 'ucph_content_text, ucph_content_image, ucph_content_textimage';
 
     // UCPH TYPO3 content element "Accordions" container
     // Activate extension container if extension is activated
