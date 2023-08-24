@@ -1,5 +1,5 @@
 {
-    "name": "university-of-copenhagen/ucph-ce-accordions",
+    "name": "university-of-copenhagen/ucph-content-accordions",
     "description": "UCPH TYPO3 accordions based on for EXT:container and Bootstrap",
     "type": "typo3-cms-extension",
     "homepage": "https://b13.com",
@@ -10,12 +10,12 @@
     },
     "autoload": {
         "psr-4": {
-            "UniversityOfCopenhagen\\ucphCeAccordions\\": "Classes/"
+            "UniversityOfCopenhagen\\ucphContentAccordions\\": "Classes/"
         }
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "ucph_ce_accordions"
+            "extension-key": "ucph_content_accordions"
         }
     }
 }

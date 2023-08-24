@@ -6,10 +6,10 @@ call_user_func(function () {
     /**
      * Temporary variables
      */
-    $extensionKey = 'ucph_ce_accordions';
+    $extensionKey = 'ucph_content_accordions';
 
     /**
-     * Default TypoScript for ucph_ce_accordions
+     * Default TypoScript for ucph_content_accordions
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
         $extensionKey,

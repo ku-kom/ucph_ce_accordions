@@ -2,7 +2,7 @@
 
 
 /*
- * This file is part of the package ucph_ce_accordions.
+ * This file is part of the package ucph_content_accordions.
  *
  * For the full copyright and license information, please read the
  * LICENSE file that was distributed with this source code.
@@ -11,7 +11,7 @@
 defined('TYPO3') or die('Access denied.');
 
 
-call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_accordions') {
+call_user_func(function ($extKey ='ucph_content_accordions', $contentType ='ucph_content_accordions') {
     // Add Content Element
     if (!is_array($GLOBALS['TCA']['tt_content']['types'][$contentType] ?? false)) {
         $GLOBALS['TCA']['tt_content']['types'][$contentType] = [];
@@ -82,7 +82,7 @@ call_user_func(function ($extKey ='ucph_ce_accordions', $contentType ='ucph_ce_a
     // Add flexForms for content element configuration
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
         '*',
-        'FILE:EXT:' . $extKey . '/Configuration/FlexForms/ucphCeAccordions.xml',
+        'FILE:EXT:' . $extKey . '/Configuration/FlexForms/ucphContentAccordions.xml',
         $contentType
     );
 });
