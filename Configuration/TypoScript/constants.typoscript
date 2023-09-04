@@ -8,9 +8,7 @@ ucph_content_accordions {
         layoutRootPath = EXT:ucph_content_accordions/Resources/Private/Layouts/
     }
     assets {
-        # cat=UCPH TYPO3 content element "Accordions"/Assets/; type=string; label=CSS assets: Path to stylesheet.
-        extraCss = EXT:ucph_content_accordions/Resources/Public/Css/Dist/ucph-ce-accordions.min.css
         # cat=UCPH TYPO3 content element "Accordions"/Assets/; type=string; label=JavaScript assets: Path to javaScript file.
-        extraJs = EXT:ucph_assets/Resources/Public/JavaScript/Dist/ext/ext_ucph_content_accordions.min.js
+        extraJs = EXT:ucph_content_accordions/Resources/Public/JavaScript/ext_ucph_content_accordions.js
     }
 }

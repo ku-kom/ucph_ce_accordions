@@ -21,9 +21,6 @@
                 </div>
             </f:else>
         </f:if>
-        <f:if condition="{lib.ucph_content_accordions.pagecss !== ''}">
-            <f:asset.css identifier="semicollapseCSS" href="{f:cObject(typoscriptObjectPath: 'lib.ucph_content_accordions.pagecss')}" />
-        </f:if>
         <f:if condition="{lib.ucph_content_accordions.pagejs !== ''}">
             <f:asset.script identifier="semicollapseJs" src="{f:cObject(typoscriptObjectPath: 'lib.ucph_content_accordions.pagejs')}" />
         </f:if>
