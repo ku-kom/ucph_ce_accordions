@@ -19,6 +19,18 @@ tt_content.ucph_content_accordions {
         20 = {$ucph_content_accordions.templates.layoutRootPath}
     }
 
+    variables {
+        tx_accordion_style = TEXT
+        tx_accordion_style.data = flexform: pi_flexform:style
+        tx_accordion_active = TEXT
+        tx_accordion_active.data = flexform: pi_flexform:default_element
+        tx_accordion_open = TEXT
+        tx_accordion_open.data = flexform: pi_flexform:open_style
+        tx_accordion_height = TEXT
+        tx_accordion_height.data = flexform: pi_flexform:accordion_item_height
+    }
+
+
   dataProcessing {
     10 = TYPO3\CMS\Frontend\DataProcessing\FlexFormProcessor
     203 = B13\Container\DataProcessing\ContainerProcessor

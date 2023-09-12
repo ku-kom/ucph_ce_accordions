@@ -1,13 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Main">
+
     <f:if condition="{accordions}">
-        <f:variable name="activeElement" value="{flexFormData.default_element}" />
-        <f:variable name="accordionStyle" value="{flexFormData.style}" />
-        <f:variable name="accordionOpenStyle" value="{flexFormData.open_style}" />
+        <f:variable name="activeElement" value="{tx_accordion_active}" />
+        <f:variable name="accordionStyle" value="{tx_accordion_style}" />
+        <f:variable name="accordionOpenStyle" value="{tx_accordion_open}" />
         <f:if condition="{accordionStyle} == 'semi-collapse'">
             <f:then>
-                <div class="accordion {accordionStyle}" id="accordion-{data.uid}">
+                <div class="accordion {accordionStyle} {tx_accordion_height}" id="accordion-{data.uid}">
                     <f:for each="{accordions}" as="accordion">
                         <f:render partial="SemiCollapseAccordion" arguments="{_all}" />
                     </f:for>
