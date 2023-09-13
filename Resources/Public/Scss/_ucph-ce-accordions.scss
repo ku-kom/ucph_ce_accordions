@@ -27,7 +27,7 @@ $semi-collapsible-btn-hover: shade-color($semi-collapsible-btn, 30%) !default;
     background-color: $semicollapse-accordion-bg;
     border: 1px solid $gray-200;
 
-    & + & {
+    &+& {
         margin-top: var(--bs-gutter-x);
     }
 }
@@ -106,6 +106,21 @@ $semi-collapsible-btn-hover: shade-color($semi-collapsible-btn, 30%) !default;
             bottom: 0;
             left: 0;
             pointer-events: none;
+        }
+    }
+}
+
+.accordion-button {
+    @include font-size($accordion-font-size);
+    font-weight: 600;
+
+    &:not(.collapsed) {
+        box-shadow: none;
+    }
+
+    &.collapsed {
+        &:hover {
+            background-color: $accordion-button-bg-hover;
         }
     }
 }
